@@ -20,8 +20,8 @@ pipeline {
             }
         }
     }
-}
-post {
+
+    post {
         // the conditions here will execute after the build is done
         always {
             // this action will happen always regardless of the result of build
