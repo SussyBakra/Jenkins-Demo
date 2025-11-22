@@ -3,6 +3,10 @@ flag = true   // or false
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven'   // Tool configured in Jenkins > Global Tool Configuration
+    }
+
     environment {
         // variables defined here can be used by any stage
         NEW_VERSION = '1.3.0'
@@ -16,6 +20,9 @@ pipeline {
 
                 // using environment variable
                 echo "Building version ${NEW_VERSION}"
+
+                // Using Maven tool
+                sh "mvn install"
             }
         }
 
