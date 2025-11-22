@@ -22,7 +22,7 @@ pipeline {
                 echo "Building version ${NEW_VERSION}"
 
                 // Windows uses bat, NOT sh
-                bat "mvn install"
+                bat "mvn -v"
             }
         }
 
