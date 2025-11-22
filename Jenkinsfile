@@ -1,4 +1,4 @@
-flag = true   // or false
+def flag = true   // or false
 
 pipeline {
     agent any
@@ -21,8 +21,8 @@ pipeline {
                 // using environment variable
                 echo "Building version ${NEW_VERSION}"
 
-                // Using Maven tool
-                sh "mvn install"
+                // Windows uses bat, NOT sh
+                bat "mvn install"
             }
         }
 
